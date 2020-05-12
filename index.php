@@ -16,7 +16,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo "Esste es un proyecto de php para la amteria de AT"
+        echo "Este es un proyecto de php para la materia de AT";
         ?>
         <br>
         <?php
