@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-            require './conexion/conexion.php';
-            $sql="select * from tb_nombre";
-            $mos=$conexion->query($sql);
+            //require './conexion/conexion.php';
+            //$sql="select * from tb_nombre";
+            //$mos=$conexion->query($sql);
 ?>
 <html>
     <head>
@@ -20,9 +20,9 @@ and open the template in the editor.
         ?>
         <br>
         <?php
-            foreach ($mos as $mostrar){
-                echo "<h3>$mostrar[0]----$mostrar[1]</h3>";
-            }
+            //foreach ($mos as $mostrar){
+            //    echo "<h3>$mostrar[0]----$mostrar[1]</h3>";
+            //}
         ?>
     </body>
 </html>
