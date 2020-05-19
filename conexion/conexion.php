@@ -1,13 +1,18 @@
 <?php
-    $user="root";
-    $pass="";
-    $dbname="tiendavirtual_bd";
-    try{
-       $conexion=new PDO("mysql:host=localhost;charset=UTF8;dbname=$dbname",$user,$pass);
-       //echo "Conexión Exitosa";
 
-    } catch (Exception $ex) {
-       echo "Conexion no exitosa";
+class Conexion{
+    
+	private $cone="";
+    function conexion(){
+        try{
+            $user="root";
+            $pass="";
+            $dbname="tiendavirtual_bd";
+            $this->cone= new PDO("mysql:host=localhost;charset=UTF8;dbname=$dbname",$user,$pass);
+            
+        } catch (Exception $ex) {
+            echo "Error".$ex->getMessage();
+        }
     }
 
     function mostrar($sql){
@@ -24,3 +29,4 @@
         } 
         return $mensa;
     }
+}
