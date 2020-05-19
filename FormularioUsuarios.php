@@ -25,20 +25,20 @@ and open the template in the editor.
                     <input type="text" class="form-control" placeholder="Ingrese sus dos nombres" name="txtnombresu" required="true">
                 </div>
                 <div class="form-group">
-                    <label>Apellidos</label>
-                    <input type="password" class="form-control" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Ingrese sus dos apellidos" name="txtapellidosu">
                 </div>
                 <div class="form-group">
                     <label>Correo</label>
-                    <input type="email" class="form-control" placeholder="Ingrese su correo electronico" name="txtcorreou" required="true">
+                    <input type="email" class="form-control" placeholder="Ingrese su correo electronico" name="txtcorreou">
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input type="password" class="form-control" placeholder="email@ejemplo.com" name="txtpassu" required="true">
+                    <input type="password" class="form-control" placeholder="Ingrese la contraseña" name="txtpassu">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputTelefonoU">Telefono</label>
-                    <input type="text" class="form-control" placeholder="Ingrese sus numero telefonico" name="txtfonou" required="true">
+                    <label>Telefono</label>
+                    <input type="text" class="form-control" placeholder="Ingrese sus numero telefonico" name="txtfonou">
                 </div>
                 
                 <button type="submit" class="btn btn-primary" name="btnregistraru">Registrar</button>
