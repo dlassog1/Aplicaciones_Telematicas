@@ -21,23 +21,23 @@ and open the template in the editor.
             <form>
                 <div class="form-group">
                     <label for="exampleInputNombresU">Nombres</label>
-                    <input type="text" class="form-control" id="exampleInputNombres" placeholder="Ingrese sus dos nombres" name="txtnombresu">
+                    <input type="text" class="form-control" id="exampleInputNombres" placeholder="Ingrese sus dos nombres" name="txtnombresu" required="true">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputApellidosU">Password</label>
-                    <input type="password" class="form-control" id="exampleInputApellidos" placeholder="Ingrese sus dos apellidos" name="txtapellidosu">
+                    <input type="password" class="form-control" id="exampleInputApellidos" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputCorreo">Correo</label>
-                    <input type="email" class="form-control" id="exampleInputCorreo" placeholder="Ingrese su correo electronico" name="txtcorreou">
+                    <input type="email" class="form-control" id="exampleInputCorreo" placeholder="Ingrese su correo electronico" name="txtcorreou" required="true">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputContraseñaU">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="Ingrese la contraseña" name="txtpassu">
+                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="Ingrese la contraseña" name="txtpassu" required="true">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefonoU">Telefono</label>
-                    <input type="text" class="form-control" id="exampleInputTelefonoU" placeholder="Ingrese sus numero telefonico" name="txtfonou">
+                    <input type="text" class="form-control" id="exampleInputTelefonoU" placeholder="Ingrese sus numero telefonico" name="txtfonou" required="true">
                 </div>
                 
                 <button type="submit" class="btn btn-primary" name="btnregistraru">Registrar</button>
