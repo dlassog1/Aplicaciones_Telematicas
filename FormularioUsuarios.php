@@ -33,7 +33,7 @@ and open the template in the editor.
                 </div>
                 <div class="form-group">
                     <label for="exampleInputContraseñaU">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="Ingrese la contraseña" name="txtpassu" required="true">
+                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="email@ejemplo.com" name="txtpassu" required="true">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTelefonoU">Telefono</label>
