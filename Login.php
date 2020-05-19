@@ -19,12 +19,12 @@ and open the template in the editor.
             <form>
 
                 <div class="form-group">
-                    <label for="exampleInputCorreo">Usuario</label>
-                    <input type="email" class="form-control" id="exampleInputCorreo" placeholder="Ingrese su usuario" name="txtusuariou">
+                    <label>Usuario</label>
+                    <input type="email" class="form-control" placeholder="Ingrese su usuario" name="txtusuariou">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputContraseñaU">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="Ingrese la contraseña" name="txtpassu1">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Ingrese la contraseña" name="txtpassu1">
                 </div>
                 
                 <button type="submit" class="btn btn-primary" name="btnaccederu">Acceder</button>
