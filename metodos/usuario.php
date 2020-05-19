@@ -24,15 +24,16 @@
 	    }
 
 	    public function comprobarUsuario($correo_u,$contraseña){
+	        require_once'./conexion/conexion.php';
 	        $db= new Conexion();
 	        $db->conexion();
 	        $sql="select count(*) from usuarios where CORREO_U='$correo_u' and CONTRASENA='$contraseña'";
 	        $cmb=$db->mostrar($sql);
 	        $acu="";
-	       	if($cmb[0]>1){
-	       		echo "Usuario loggeado";
+	       	if($cmb->fetchColumn() >= 1){
+	       		echo "<script> alert(\"Usuario Logeado\"); </script>";
 	       	}else{
-	       		echo "Error no se pudo comprobar sus credenciales";
+	       		echo "<script> alert(\"Error el correo o la contraseña son incorrectos\"); </script>";
 	       	} 
 	       
 	        $db=null;
