@@ -10,6 +10,8 @@ and open the template in the editor.
             
 ?>
 <html>
+<html lang="es">
+
     <head>
         <meta charset="UTF-8">
         <!-- Bootstrap CSS -->
@@ -22,31 +24,43 @@ and open the template in the editor.
         <div class="container">
             <h1>Registro de Usuario</h1>
         </div>
+
         <div class="container">
             <form method="POST" align="center">
+
+        <div class="container border">
+            <br>
+            <form>
+
                 <div class="form-group">
-                    <label for="exampleInputNombresU">Nombres</label>
-                    <input type="text" class="form-control" id="exampleInputNombres" placeholder="Ingrese sus dos nombres" name="txtnombresu" required="true">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" placeholder="Ingrese sus dos nombres" name="txtnombresu" required="true">
                 </div>
                 <div class="form-group">
+
                     <label for="exampleInputApellidosU">Apellidos</label>
                     <input type="text" class="form-control" id="exampleInputApellidos" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
+
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Ingrese sus dos apellidos" name="txtapellidosu">
+
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputCorreo">Correo</label>
-                    <input type="email" class="form-control" id="exampleInputCorreo" placeholder="Ingrese su correo electronico" name="txtcorreou" required="true">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" placeholder="Ingrese su correo electronico" name="txtcorreou">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputContraseñaU">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputContraseñaU" placeholder="Ingrese la contraseña" name="txtpassu" required="true">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Ingrese la contraseña" name="txtpassu">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputTelefonoU">Telefono</label>
-                    <input type="text" class="form-control" id="exampleInputTelefonoU" placeholder="Ingrese sus numero telefonico" name="txtfonou" required="true">
+                    <label>Telefono</label>
+                    <input type="text" class="form-control" placeholder="Ingrese sus numero telefonico" name="txtfonou">
                 </div>
                 
                 <button type="submit" class="btn btn-primary" name="btnregistraru">Registrar</button>
             </form>
+
             <?php
             if($_POST){
                 $nombres_u=$_POST['txtnombresu'];
@@ -56,7 +70,10 @@ and open the template in the editor.
                 $telefono_u=$_POST['txtfonou'];
                 $usuario->insertarUsuario($nombres_u,$apellido_u,$correo_u,$contraseña,$telefono_u);
             }
-        ?>
+
+            <br>
+        </div>
+        
         </div>
         
 
