@@ -15,7 +15,8 @@ and open the template in the editor.
         <div class="container">
             <h1>Login</h1>
         </div>
-        <div class="container">
+        <div class="container border">
+            <br>
             <form>
 
                 <div class="form-group">
@@ -30,6 +31,7 @@ and open the template in the editor.
                 <button type="submit" class="btn btn-primary" name="btnaccederu">Acceder</button>
                 
             </form>
+            <br>
         </div>
 
         <?php
