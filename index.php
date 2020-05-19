@@ -17,7 +17,7 @@ and open the template in the editor.
     <body>
         <?php
         echo "Este es un proyecto de php para la materia de AT";
-        echo "PERRITA"
+        
         ?>
         <br>
         <?php
