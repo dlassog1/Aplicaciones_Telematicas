@@ -24,7 +24,7 @@ and open the template in the editor.
                     <input type="text" class="form-control" id="exampleInputNombres" placeholder="Ingrese sus dos nombres" name="txtnombresu" required="true">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputApellidosU">Password</label>
+                    <label for="exampleInputApellidosU">Apellidos</label>
                     <input type="password" class="form-control" id="exampleInputApellidos" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
                 </div>
                 <div class="form-group">
