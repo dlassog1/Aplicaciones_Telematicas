@@ -17,7 +17,8 @@ and open the template in the editor.
         <div class="container">
             <h1>Registro de Usuario</h1>
         </div>
-        <div class="container">
+        <div class="container border">
+            <br>
             <form>
                 <div class="form-group">
                     <label>Nombres</label>
@@ -42,6 +43,7 @@ and open the template in the editor.
                 
                 <button type="submit" class="btn btn-primary" name="btnregistraru">Registrar</button>
             </form>
+            <br>
         </div>
         <?php
         // put your code here
