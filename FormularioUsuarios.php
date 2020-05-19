@@ -70,6 +70,7 @@ and open the template in the editor.
                 $telefono_u=$_POST['txtfonou'];
                 $usuario->insertarUsuario($nombres_u,$apellido_u,$correo_u,$contraseña,$telefono_u);
             }
+            ?>
 
             <br>
         </div>
