@@ -21,7 +21,7 @@ and open the template in the editor.
     </head>
     <body>
 
-        <div class="container">
+        <div class="container border">
             <h1>Registro de Usuario</h1>
         </div>
 
