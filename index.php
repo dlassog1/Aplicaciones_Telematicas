@@ -14,32 +14,64 @@ and open the template in the editor.
         <meta charset="UTF-8">
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		 <!-- Index CSS -->
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <title></title>
+        <title>Login</title>
     </head>
     <body>
-        <div class="container">
-            <h1>Login</h1>
-        </div>
-        <div class="container border">
-            <br>
-            <form method="POST" align="center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 d-none d-md-block image-container">
 
-                <div class="form-group">
-                    <label>Usuario</label>
-                    <input type="email" class="form-control" placeholder="Ingrese su usuario" name="txtusuariou">
                 </div>
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" class="form-control" placeholder="Ingrese la contraseña" name="txtpassu1">
-                </div>
-                
-                <button type="submit" class="btn btn-primary" name="btnaccederu">Acceder</button>
-                
-            </form>
-            <br>
-        </div>
+                <div class="col-lg-6 col-md-6 form-container">
+                    <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                        <div class="logo mb-3">
+                            <img src="imagenes/user.png" width="150px">
+                        </div>
+                        <div class="heading mb-4">
+                            <h3>Login</h3>
+                        </div>
+                        <form method="POST">
+                            <div class="col-6 d-flex">
+                                <h5>Usuario</h5>
+                            </div>
+                            <div class="form-input">
+                                <span><i class="fa fa-envelope"></i></span>
+                                <input type="email" placeholder="Ingrese su usuario" name="txtusuariou" required="true">
+                            </div>
+                            <div class="col-6 d-flex">
+                                <h5>Contraseña</h5>
+                            </div>
+                            <div class="form-input">
+                                <span><i class="fa fa-lock"></i></span>
+                                <input type="password" placeholder="Ingrese la contraseña" name="txtpassu1" required="true">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6 d-flex">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cb1">
+                                        <label class="custom-control-label text-white" for="cb1">Recordar Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <a href="" class="forget-link">Olvide Contraseña</a>
+                                </div>
+                            </div>
+                            <div class="text-left mb-3">
+                                <button type="submit" class="btn" name="btnaccederu">Acceder</button>
+                            </div>
+                            <div style="color: #777">No tienes una cuenta
+                                <a href="" class="register-link">Registrate aqui</a>
+                            </div>
 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php
             if($_POST){
                 $nombres_u=$_POST['txtusuariou'];
