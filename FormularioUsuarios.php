@@ -38,8 +38,8 @@ and open the template in the editor.
                 </div>
                 <div class="form-group">
 
-                    <label for="exampleInputApellidosU">Apellidos</label>
-                    <input type="text" class="form-control" id="exampleInputApellidos" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
+                    <label>Apellidos</label>
+                    <input type="text" class="form-control" placeholder="Ingrese sus dos apellidos" name="txtapellidosu" required="true">
 
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="Ingrese sus dos apellidos" name="txtapellidosu">
