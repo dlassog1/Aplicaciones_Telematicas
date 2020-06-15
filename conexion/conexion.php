@@ -1,32 +1,11 @@
 <?php
 
-class Conexion{
+function conexion(){
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $database = "tiendavirtual_bd";
+        $con = mysqli_connect($host, $user, $pass, $database) or die ("Error al conectar a la base");
+        return $con;
     
-	private $cone="";
-    function conexion(){
-        try{
-            $user="root";
-            $pass="";
-            $dbname="tiendavirtual_bd";
-            $this->cone= new PDO("mysql:host=localhost;charset=UTF8;dbname=$dbname",$user,$pass);
-            
-        } catch (Exception $ex) {
-            echo "Error".$ex->getMessage();
-        }
     }
-
-    function mostrar($sql){
-        $mostrar=$this->cone->query($sql);
-        return $mostrar;
-    }
-    function insertar($sql){
-        $inser=$this->cone->prepare($sql);
-        $mensa="";
-        if($inser->execute()){
-            $mensa= "<script> alert(\"Los datos se han ingresado con éxito\"); </script>";
-        } else {
-            $mensa="<script> alert(\"Error-->Revise los datos ingresados\"); </script>";
-        } 
-        return $mensa;
-    }
-}
