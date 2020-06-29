@@ -6,15 +6,15 @@ include "utils.php";
 $dbConn =  connect($db);
 
 /*
-  listar todos los clientes o solo uno
+  listar todos los tienda o solo uno
  */
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    if (isset($_GET['cedula_cli']))
+    if (isset($_GET['ruc']))
     {
       //Mostrar un post
-      $sql = $dbConn->prepare("SELECT * FROM clientes where cedula_cli=:cedula_cli");
-      $sql->bindValue(':cedula_cli', $_GET['cedula_cli']);
+      $sql = $dbConn->prepare("SELECT * FROM tienda where ruc=:ruc");
+      $sql->bindValue(':ruc', $_GET['ruc']);
       $sql->execute();
       header("HTTP/1.1 200 OK");
       echo json_encode(  $sql->fetch(PDO::FETCH_ASSOC)  );
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 	  }
     else {
       //Mostrar
-      $sql = $dbConn->prepare("SELECT * FROM clientes");
+      $sql = $dbConn->prepare("SELECT * FROM tienda");
       $sql->execute();
       $sql->setFetchMode(PDO::FETCH_ASSOC);
       header("HTTP/1.1 200 OK");
@@ -35,17 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $input = $_POST;
-    $sql = "INSERT INTO clientes
-          (cedula_cli, nombres_cli, apellidos_cli, telefono_cli, direccion_cli, correo_cli)
+    $sql = "INSERT INTO tienda
+          (ruc, nombres_t, direccion_t, telefono_t)
           VALUES
-          (:cedula_cli, :nombres_cli, :apellidos_cli, :telefono_cli, :direccion_cli, :correo_cli)";
+          (:ruc, :nombres_t, :direccion_t, :telefono_t)";
     $statement = $dbConn->prepare($sql);
     bindAllValues($statement, $input);
     $statement->execute();
     $postId = $dbConn->lastInsertId();
     if($postId)
     {
-      $input['cedula_cli'] = $postId;
+      $input['ruc'] = $postId;
       header("HTTP/1.1 200 OK");
       echo json_encode($input);
       exit();
@@ -55,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 //Borrar
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE')
 {
-	$cedula_cli = $_GET['cedula_cli'];
-  $statement = $dbConn->prepare("DELETE FROM clientes where cedula_cli=:cedula_cli");
-  $statement->bindValue(':cedula_cli', $cedula_cli);
+	$ruc = $_GET['ruc'];
+  $statement = $dbConn->prepare("DELETE FROM tienda where ruc=:ruc");
+  $statement->bindValue(':ruc', $ruc);
   $statement->execute();
 	header("HTTP/1.1 200 OK");
 	exit();
@@ -67,13 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE')
 if ($_SERVER['REQUEST_METHOD'] == 'PUT')
 {
     $input = $_GET;
-    $postId = $input['cedula_cli'];
+    $postId = $input['ruc'];
     $fields = getParams($input);
 
     $sql = "
-          UPDATE clientes
+          UPDATE tienda
           SET $fields
-          WHERE cedula_cli='$postId'
+          WHERE ruc='$postId'
            ";
 
     $statement = $dbConn->prepare($sql);
