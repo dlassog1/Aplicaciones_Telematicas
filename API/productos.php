@@ -6,14 +6,14 @@ include "utils.php";
 $dbConn =  connect($db);
 
 /*
-  listar todos los posts o solo uno
+  listar todos los productos o solo uno
  */
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
     if (isset($_GET['id']))
     {
       //Mostrar un post
-      $sql = $dbConn->prepare("SELECT * FROM clientes where id=:id");
+      $sql = $dbConn->prepare("SELECT * FROM productos where id_producto=:id");
       $sql->bindValue(':id', $_GET['id']);
       $sql->execute();
       header("HTTP/1.1 200 OK");
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 	  }
     else {
       //Mostrar lista de post
-      $sql = $dbConn->prepare("SELECT * FROM clientes");
+      $sql = $dbConn->prepare("SELECT * FROM productos");
       $sql->execute();
       $sql->setFetchMode(PDO::FETCH_ASSOC);
       header("HTTP/1.1 200 OK");
@@ -35,10 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $input = $_POST;
-    $sql = "INSERT INTO posts
-          (title, status, content, user_id)
+    $sql = "INSERT INTO productos
+          (id_poducto,ruc,id_categoria,nombre_p,stock,precio_p,descripcion_p)
           VALUES
-          (:title, :status, :content, :user_id)";
+          (:id_poducto,:ruc,:id_categoria,:nombre_p,:stock,:precio_p,:descripcion_p)";
     $statement = $dbConn->prepare($sql);
     bindAllValues($statement, $input);
     $statement->execute();
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE')
 {
 	$id = $_GET['id'];
-  $statement = $dbConn->prepare("DELETE FROM posts where id=:id");
+  $statement = $dbConn->prepare("DELETE FROM productos where id=:id");
   $statement->bindValue(':id', $id);
   $statement->execute();
 	header("HTTP/1.1 200 OK");
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT')
     $fields = getParams($input);
 
     $sql = "
-          UPDATE posts
+          UPDATE productos
           SET $fields
           WHERE id='$postId'
            ";
